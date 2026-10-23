@@ -156,3 +156,5 @@
 public/icon-192.png          -filter -diff -merge -text
 public/icon-512.png          -filter -diff -merge -text
 public/maskable-icon-512.png -filter -diff -merge -text
+public/nasya-cargo-emblem.jpg -filter -diff -merge -text
+src/imports/nasya-logo.png   -filter -diff -merge -text
