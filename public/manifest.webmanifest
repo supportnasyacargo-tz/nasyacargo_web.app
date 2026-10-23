@@ -1,0 +1,14 @@
+{
+  "name": "Nasya Cargo Management",
+  "short_name": "Nasya Cargo",
+  "description": "Nasya Cargo shipment, packing, invoicing, and accounting management.",
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "background_color": "#07090d",
+  "theme_color": "#07090d",
+  "orientation": "any",
+  "icons": [
+    { "src": "/nasya-cargo-emblem.jpg", "sizes": "1056x1056", "type": "image/jpeg", "purpose": "any maskable" }
+  ]
+}
