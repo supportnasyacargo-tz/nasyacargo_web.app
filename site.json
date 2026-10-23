@@ -1,0 +1,10 @@
+{
+  "description": "Nasya Cargo internal operations platform for shipments, customers, packing, payments and secure cargo tracking.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
