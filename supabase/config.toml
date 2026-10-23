@@ -1,0 +1,7 @@
+project_id = "nasya-cargo"
+
+[functions.agent-api]
+# This function verifies its own expiring, revocable connection token.
+# It does not accept Supabase user JWTs as agent credentials.
+verify_jwt = false
+
