@@ -13,7 +13,7 @@ with repo(version) as (
          ('20260816112517'),('20260817182455'),('20260817184710'),('20260817190000'),
          ('20260817193000'),('20260817200000'),('20260819120000'),('20260819130000'),
          ('20260911090000'),('20260911091000'),('20260911092000'),('20260912085000'),
-         ('20260912090000')
+         ('20260912090000'),('20261015090000')
 )
 select
   coalesce(repo.version, ledger.version) as version,
@@ -22,8 +22,7 @@ select
     when ledger.version is null then 'NOT RECORDED — migration not applied, or applied before the ledger existed'
     when repo.version is null then 'DATABASE AHEAD OF REPOSITORY — recorded here but no such migration in the repo'
     else 'ok'
-  end as state,
-  ledger.applied_at
+  end as state
 from repo
 full outer join supabase_migrations.schema_migrations as ledger
   on ledger.version = repo.version
