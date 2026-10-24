@@ -12,6 +12,9 @@
 -- insert into this table -- see supabase/README.md.
 --
 -- Safe to run more than once. It creates nothing else and changes no data.
+-- The Supabase CLI records this migration after the file succeeds, so this
+-- file must not insert its own version into schema_migrations. Doing both
+-- causes a duplicate primary-key error during `supabase db push`.
 
 set lock_timeout = '5s';
 set statement_timeout = '60s';
@@ -74,7 +77,4 @@ begin
 end;
 $$;
 
-insert into supabase_migrations.schema_migrations (version, name)
-values ('20260912085000', 'migration_ledger')
-on conflict (version) do nothing;
 
