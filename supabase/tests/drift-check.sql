@@ -40,7 +40,8 @@ from (values
   ('20260911091000', to_regclass('public.payment_receipt_counters') is not null, 'atomic_payment_recording'),
   ('20260911092000', exists (select 1 from pg_proc p join pg_namespace n on n.oid = p.pronamespace where n.nspname = 'public' and p.proname = 'transition_shipment_status_confirmed'), 'status_transition_confirmation'),
   ('20260912085000', to_regclass('supabase_migrations.schema_migrations') is not null, 'migration_ledger'),
-  ('20260912090000', exists (select 1 from pg_proc p join pg_namespace n on n.oid = p.pronamespace where n.nspname = 'public' and p.proname = 'repost_invoice_accounting'), 'invoice_repair_discount_and_expense_idempotency')
+  ('20260912090000', exists (select 1 from pg_proc p join pg_namespace n on n.oid = p.pronamespace where n.nspname = 'public' and p.proname = 'repost_invoice_accounting'), 'invoice_repair_discount_and_expense_idempotency'),
+  ('20261015090000', to_regclass('public.agent_connections') is not null, 'agent_connections_and_approvals')
 ) as t(version, applied, name)
 order by version;
 
