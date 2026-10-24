@@ -606,10 +606,4 @@ create trigger trg_guard_payment_requires_posted_invoice
   before insert on public.payment_records
   for each row execute function public.guard_payment_requires_posted_invoice();
 
--- ---------------------------------------------------------------------------
--- 11. Record this migration in the ledger (see 20260912085000).
--- ---------------------------------------------------------------------------
-insert into supabase_migrations.schema_migrations (version, name)
-values ('20260912090000', 'invoice_repair_discount_and_expense_idempotency')
-on conflict (version) do nothing;
 
